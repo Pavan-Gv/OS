@@ -45,3 +45,5 @@ printf("\nAverage Turnaround
 Time=%f\n",avg_tat); 
 }
 ```
+![OS PROXY_20221129_124658_1](https://user-images.githubusercontent.com/94827772/204463707-675addb5-0630-4c64-812a-4003b449fa2c.png)
+
