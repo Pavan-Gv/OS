@@ -230,22 +230,23 @@ int main()
 #include<unistd.h> 
 int main() 
 { 
-int fd[2],child; char a[10]; 
-printf("\n Enter the string:"); 
-scanf("%s",a); 
-pipe(fd); 
-child=fork(); 
-if(!child) 
-{ 
-close(fd[0]); 
-write(fd[1],a,5); wait(0); 
-} 
-else 
-{close(fd[1]); 
-read(fd[0],a,5); 
-printf("The string received from pipe is: %s",a); 
-} 
-return 0; 
+    int fd[2],child; char a[10]; 
+    printf("\n Enter the string:"); 
+    scanf("%s",a); 
+    pipe(fd); 
+    child=fork(); 
+    if(!child) 
+    { 
+        close(fd[0]); 
+        write(fd[1],a,5); wait(0); 
+    } 
+    else 
+    {
+        close(fd[1]); 
+        read(fd[0],a,5); 
+        printf("The string received from pipe is: %s",a); 
+    } 
+    return 0; 
 }
 ```
 ![OS PROXY_20221129_125232_1](https://user-images.githubusercontent.com/94827772/204464602-983a5031-5ef9-44cf-a9d9-94d126233189.png)
