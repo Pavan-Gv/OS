@@ -285,3 +285,31 @@ int main()
 ```
 ![OS PROXY_20221129_125327_1](https://user-images.githubusercontent.com/94827772/204464759-4d404039-de27-4b85-98e1-963ad153c720.png)
 
+### 5A. DISK SCHEDULING FIRST COME FIRST SERVE:
+```
+#include <stdio.h> 
+#include <stdlib.h> 
+int main() 
+{ 
+    int RQ[100],i,n,TotalHeadMoment=0,initial; 
+
+    printf ("Enter the number of Requests\n"); 
+    scanf("%d",&n); 
+    
+    printf("Enter the Requests sequence\n");
+    for(i=0;i<n;i++) 
+        scanf("%d",&RQ[i]); 
+    
+    printf("Enter initial head position\n"); 
+    scanf("%d",&initial); 
+    for(i=0;i<n;i++) 
+    { 
+        TotalHeadMoment=TotalHeadMoment+abs(RQ[i]-initial); 
+        initial=RQ[i]; 
+    }       
+    printf("Total head moment is %d",TotalHeadMoment); 
+    return 0; 
+}
+```
+![Uploading 5A1.png…]()
+
